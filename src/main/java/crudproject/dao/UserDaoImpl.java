@@ -37,8 +37,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void edit(User user) {
-        em.merge(user);
+    public void edit(User user, int id) {
+        User user1 = getById(id);
+        em.merge(user1);
     }
 
     @Override
