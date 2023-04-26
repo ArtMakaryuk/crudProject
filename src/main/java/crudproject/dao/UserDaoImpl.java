@@ -1,17 +1,11 @@
 package crudproject.dao;
 
 import crudproject.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.sql.DataSource;
 import java.util.List;
 
 @Repository
@@ -37,9 +31,8 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void edit(User user, int id) {
-        User user1 = getById(id);
-        em.merge(user1);
+    public void edit(User user) {
+        em.merge(user);
     }
 
     @Override

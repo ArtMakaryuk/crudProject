@@ -1,6 +1,7 @@
 package crudproject.dao;
 
 import crudproject.model.User;
+
 import java.util.List;
 
 public interface UserDao {
@@ -11,7 +12,7 @@ public interface UserDao {
 
     void delete(User user);
 
-    void edit(User user, int id);
+    void edit(User user);
 
     User getById(int id);
 }

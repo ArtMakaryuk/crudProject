@@ -6,25 +6,26 @@
     <title>Edit user</title>
 </head>
 <body>
-<form th:method="patch" th:action="@{/users/edit/{id}(id=${user.getId()})}" th:object="${user}">
-    <input type="hidden" name="${_user.get}" value="${_csrf.token}" />
+
+<form th:method="post" th:action="@{/users/update/{id}(id=${user.id})}" th:object="${user}">
+
     <label for="name">Name</label>
-    <input type="text" th:field="${user.name}" id="name"/>
+    <input type="text" th:field="*{name}" id="name"/>
 
     </br>
 
     <label for="lastName">Last Name</label>
-    <input th:field="${user.lastName}" type="text" id="lastName"/>
+    <input th:field="*{lastName}" type="text" id="lastName"/>
 
     </br>
 
     <label for="age">Age</label>
-    <input th:field="${user.age}" type="text" id="age"/>
+    <input th:field="*{age}" type="text" id="age"/>
 
     </br>
 
     <label for="email">E-mail</label>
-    <input th:field="${user.email}" type="text" id="email"/>
+    <input th:field="*{email}" type="text" id="email"/>
 
     </br>
 

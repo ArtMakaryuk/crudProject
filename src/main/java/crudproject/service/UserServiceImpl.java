@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(readOnly = true)
     @Override
-    public List<User> getAllUsers()  {
+    public List<User> getAllUsers() {
         return userDao.getAllUsers();
     }
 
@@ -39,8 +39,8 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public void edit(User user, int id) {
-        userDao.edit(user, id);
+    public void edit(User user) {
+        userDao.edit(user);
     }
 
     @Transactional
