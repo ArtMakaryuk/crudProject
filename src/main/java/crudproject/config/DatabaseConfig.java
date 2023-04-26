@@ -36,7 +36,6 @@ public class DatabaseConfig {
         entityManager.setPackagesToScan(env.getRequiredProperty("db.entity.package"));
         entityManager.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         entityManager.setJpaProperties(getHibernateProperties());
-
         return entityManager;
     }
 

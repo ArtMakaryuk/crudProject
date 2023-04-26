@@ -25,9 +25,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void delete(User user) {
-        User user1 = em.merge(user);
-        em.remove(user1);
+    public void delete(int id) {
+        User user = getById(id);
+        em.remove(user);
     }
 
     @Override
